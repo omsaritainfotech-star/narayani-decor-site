@@ -2,14 +2,15 @@ backend:
   name: github
   repo: omsaritainfotech-star/narayani-decor-site   # <— your repo
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: /auth
   use_graphql: true
 
-media_folder: "public/uploads"   # where uploads go in repo
-public_folder: "/uploads"        # how they’re referenced on the site
+media_folder: "public/uploads"
+public_folder: "/uploads"
 
 logo_url: "/images/logo.png"
-site_url: "https://example.com"  # optional; can adjust later
-
+site_url: "https://example.com"
 collections:
   - name: pages
     label: Pages

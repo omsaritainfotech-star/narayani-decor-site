@@ -4,9 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Admin | Narayani Decor</title>
-    <!-- Decap CMS (no Netlify Identity needed) -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
-    <style>html,body{height:100%}body{margin:0}</style>
+
+    <!-- Tell Decap we'll init manually (avoids running before <body> exists) -->
+    <script>window.CMS_MANUAL_INIT = true;</script>
+
+    <!-- Load Decap CMS, but defer until DOM is parsed -->
+    <script src="https://unpkg.com/decap-cms@^3.8.3/dist/decap-cms.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <script>
+      // Init only after everything is ready
+      window.addEventListener('DOMContentLoaded', function () {
+        if (window.CMS && typeof window.CMS.init === 'function') {
+          window.CMS.init(); // loads /admin/config.yml automatically
+        }
+      });
+    </script>
+  </body>
 </html>
