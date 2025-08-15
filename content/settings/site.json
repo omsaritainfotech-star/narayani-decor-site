@@ -1,0 +1,34 @@
+{
+  "siteName": "Narayani Decor & Furnishing",
+  "tagline": "Western Odisha\u2019s trusted home decor studio",
+  "logo": "/images/logo.png",
+  "phone": "9439652292",
+  "whatsapp": "9439652292",
+  "email": "hello@narayanidecor.in",
+  "address": {
+    "line1": "Sarbahal, Jharsuguda",
+    "city": "Jharsuguda",
+    "region": "Odisha",
+    "postalCode": "768201",
+    "country": "India",
+    "lat": 21.855,
+    "lng": 84.006
+  },
+  "brand": {
+    "primary": "#111827",
+    "accent": "#6366F1",
+    "fontHeadings": "Poppins",
+    "fontBody": "Inter"
+  },
+  "social": {
+    "facebook": "",
+    "instagram": "",
+    "youtube": "",
+    "whatsappLink": "https://wa.me/919439652292?text=Hi%20Narayani%20Decor,%20I%27m%20interested%20in%20louvers/wallpapers"
+  },
+  "seo": {
+    "titleSuffix": " | Narayani Decor & Furnishing",
+    "description": "Curtains, wallpapers, and fluted & charcoal louvers with professional installation in Jharsuguda & Western Odisha.",
+    "ogImage": "/images/og-default.jpg"
+  }
+}

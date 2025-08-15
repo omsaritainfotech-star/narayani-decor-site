@@ -1,0 +1,159 @@
+
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "settings"
+    label: "Site Settings"
+    editor: { preview: false }
+    files:
+      - file: "content/settings/site.json"
+        label: "Global Settings"
+        name: "site"
+        fields:
+          - { label: "Site Name", name: "siteName", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string", required: false }
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+          - { label: "Primary Phone", name: "phone", widget: "string" }
+          - { label: "WhatsApp Number (digits only)", name: "whatsapp", widget: "string", required: false }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - label: "Address"
+            name: "address"
+            widget: "object"
+            fields:
+              - { label: "Line 1", name: "line1", widget: "string" }
+              - { label: "City", name: "city", widget: "string" }
+              - { label: "Region/State", name: "region", widget: "string" }
+              - { label: "Postal Code", name: "postalCode", widget: "string", required: false }
+              - { label: "Country", name: "country", widget: "string", default: "India" }
+              - { label: "Latitude", name: "lat", widget: "number", required: false }
+              - { label: "Longitude", name: "lng", widget: "number", required: false }
+          - label: "Brand"
+            name: "brand"
+            widget: "object"
+            fields:
+              - { label: "Primary Color", name: "primary", widget: "string", default: "#111827" }
+              - { label: "Accent Color", name: "accent", widget: "string", default: "#6366F1" }
+              - { label: "Font Headings", name: "fontHeadings", widget: "string", default: "Poppins" }
+              - { label: "Font Body", name: "fontBody", widget: "string", default: "Inter" }
+          - label: "Social Links"
+            name: "social"
+            widget: "object"
+            required: false
+            fields:
+              - { label: "Facebook", name: "facebook", widget: "string", required: false }
+              - { label: "Instagram", name: "instagram", widget: "string", required: false }
+              - { label: "YouTube", name: "youtube", widget: "string", required: false }
+              - { label: "WhatsApp (link)", name: "whatsappLink", widget: "string", required: false }
+          - label: "SEO Defaults"
+            name: "seo"
+            widget: "object"
+            fields:
+              - { label: "Default Title Suffix", name: "titleSuffix", widget: "string", default: " | Narayani Decor & Furnishing" }
+              - { label: "Default Description", name: "description", widget: "text", required: false }
+              - { label: "Default OG Image", name: "ogImage", widget: "image", required: false }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Keywords", name: "keywords", widget: "list", required: false }
+          - { label: "OG Image", name: "og_image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "services"
+    label: "Services"
+    folder: "content/services"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Excerpt", name: "excerpt", widget: "string" }
+      - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Keywords", name: "keywords", widget: "list", required: false }
+          - { label: "OG Image", name: "og_image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Category", name: "category", widget: "string", required: false }
+      - { label: "Price (optional)", name: "price", widget: "number", required: false }
+      - { label: "Images", name: "images", widget: "list", required: false, field: {label: Image, name: image, widget: image} }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - label: "SEO"
+        name: "seo"
+        widget: "object"
+        required: false
+        fields:
+          - { label: "Title", name: "title", widget: "string", required: false }
+          - { label: "Description", name: "description", widget: "text", required: false }
+          - { label: "Keywords", name: "keywords", widget: "list", required: false }
+          - { label: "OG Image", name: "og_image", widget: "image", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects (Before/After)"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Location", name: "location", widget: "string", required: false }
+      - { label: "Before Image", name: "before_image", widget: "image", required: false }
+      - { label: "After Image", name: "after_image", widget: "image", required: false }
+      - { label: "Excerpt", name: "excerpt", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "content/testimonials"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Rating (1-5)", name: "rating", widget: "number", min: 1, max: 5, required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "faqs"
+    label: "FAQs"
+    folder: "content/faqs"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Question", name: "title", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string" }
+      - { label: "Answer", name: "body", widget: "markdown" }

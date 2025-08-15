@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fonts */
+:root {
+  --brand-primary: #111827;
+  --brand-accent: #6366F1;
+  --font-heading: ui-sans-serif, system-ui;
+  --font-body: ui-sans-serif, system-ui;
+}
+
+body { font-family: var(--font-body); }
+h1,h2,h3,h4 { font-family: var(--font-heading); }
+
+/* Hamburger icon */
+.hamburger-icon { position: relative; width: 20px; height: 14px; display: inline-block; }
+.hamburger-icon .line {
+  position: absolute; left: 0; right: 0; height: 2px; background: #111827; border-radius: 2px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.hamburger-icon .line:nth-child(1) { top: 0; }
+.hamburger-icon .line:nth-child(2) { top: 6px; }
+.hamburger-icon .line:nth-child(3) { top: 12px; }
