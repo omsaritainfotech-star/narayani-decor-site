@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyCTA from "@/components/StickyCTA";
-import { Inter, Poppins } from "next/font/google";
 import { getSettings } from "@/lib/content";
 
 export const viewport: Viewport = {
@@ -11,9 +10,6 @@ export const viewport: Viewport = {
   initialScale: 1,
   viewportFit: "cover",
 };
-
-const bodyFont = Inter({ subsets: ["latin"], variable: "--font-body" });
-const headingFont = Poppins({ subsets: ["latin"], weight: ["400","600","700"], variable: "--font-heading" });
 
 export const metadata: Metadata = {
   title: "Narayani Decor & Furnishing",
@@ -28,7 +24,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <html lang="en">
-      <body className={`${bodyFont.variable} ${headingFont.variable}`}>
+      <body>
         <style>{`:root{--brand-primary:${primary};--brand-accent:${accent};}`}</style>
         <Header />
         <main className="min-h-[70vh]">{children}</main>
